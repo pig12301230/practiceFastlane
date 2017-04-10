@@ -1,0 +1,22 @@
+machine:
+  timezone: Asia/Tokyo
+  xcode:
+    version: 8.3
+  environment:
+    XCODE_SCHEME: practiceFastlane
+    XCODE_WORKSPACE: practiceFastlane.xcodeproj
+    GYM_CODE_SIGNING_IDENTITY: 'iPhone Distribution: Bubboe Corporation (XUXU88ZU6U)'
+
+dependencies:
+  pre:
+    - brew install imagemagick
+
+deployment:
+  alpha:
+    branch: alpha
+    commands:
+      - bundle exec fastlane alpha
+  beta:
+    branch: master
+    commands:
+      - bundle exec fastlane beta
